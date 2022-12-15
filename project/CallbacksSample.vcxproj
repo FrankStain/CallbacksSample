@@ -180,6 +180,8 @@
     <ClCompile Include="..\source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\source\demo\callbacks\callbacks.h" />
+    <ClInclude Include="..\source\demo\callbacks\internal\FunctionProxyBuilder.h" />
     <ClInclude Include="..\source\main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

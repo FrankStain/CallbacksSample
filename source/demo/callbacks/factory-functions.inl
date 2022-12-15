@@ -1,9 +1,9 @@
 #pragma once
 
 
-namespace Deom
+namespace Demo
 {
-namespace Callbacks
+inline namespace Callbacks
 {
 	template< auto FUNCTION >
 	inline auto GetCallback() -> std::enable_if_t<Internal::IS_GLOBAL_FUNCTION<FUNCTION>, Callback<Internal::FunctionType<FUNCTION>>>

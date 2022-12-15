@@ -1,9 +1,9 @@
 #pragma once
 
 
-namespace Deom
+namespace Demo
 {
-namespace Callbacks
+inline namespace Callbacks
 {
 	template< typename TDeclaration >
 	class Callback;

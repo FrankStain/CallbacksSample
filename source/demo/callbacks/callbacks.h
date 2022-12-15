@@ -8,10 +8,10 @@
 
 
 // Namespace definition.
-namespace Deom
+namespace Demo
 {
 // Callbacks subsystem.
-namespace Callbacks
+inline namespace Callbacks
 {
 // Internal stuff for callbacks.
 namespace Internal

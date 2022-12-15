@@ -6,21 +6,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Билдер проксирующей функции для пустой лямбды с заданной сигнатурой.
-	template< typename TResult, typename... TArguments >
-	struct EmptyLambdaProxyBuilder final
-	{
-		// Проксирующая функция для лямбды.
-		template< typename TLambda >
-		static inline TResult Proxy( void* const, TArguments... arguments )
-		{
-			alignas( TLambda ) std::byte buffer[ sizeof( TLambda ) ] {};
-			auto& lambda = *reinterpret_cast<TLambda*>( buffer );
-			return lambda( std::forward<TArguments>( arguments )... );
-		};
-	};
-
-
 	// Политика опознания сигнатуры коллбека. Общая форма. Сюда код проваливаться не должен никогда.
 	template< typename >
 	struct SignatureTypePolicy final

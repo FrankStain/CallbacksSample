@@ -25,6 +25,7 @@ namespace Internal
 // Usable internal stuff.
 #include "internal/FunctionProxyBuilder.h"
 #include "internal/MethodProxyBuilder.h"
+#include "internal/EmptyLambdaProxyBuilder.h"
 
 // Public interface.
 

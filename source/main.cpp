@@ -1,4 +1,5 @@
 #include <main.h>
+#include <demo/callbacks/callbacks.h>
 
 
 namespace Demo
@@ -6,43 +7,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Опознание функциональных объектов. Общая форма, ложное значение.
-	template< typename, typename = void >
-	struct IsCallable final : std::false_type {};
-
-	// Опознание функциональных объектов. Проверка на функциональный объект.
-	template< typename TCandidate >
-	struct IsCallable<TCandidate, std::void_t<decltype( (void)&TCandidate::operator() )>> final : std::is_class<TCandidate> {};
-
-	// Опознание глобальных функций. Обща форма, ложное значение.
-	template< typename >
-	struct IsGlobalFunction final : std::false_type {};
-
-	// Опознание глобальных функций. Проверка свойств глобальной функции.
-	template< typename TResult, typename... TArguments >
-	struct IsGlobalFunction<TResult (*)( TArguments... )> final : std::true_type {};
-
-	// Опознание методов. Общая форма, ложное значение.
-	template< typename, typename >
-	struct IsMemberFunction final : std::false_type {};
-
-	// Опознание методов. Проверка свойств рядового метода.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct IsMemberFunction<TResult (THost::*)( TArguments... ), THost> final : std::true_type {};
-
-	// Опознание методов. Проверка свойств метода с константным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct IsMemberFunction<TResult (THost::*)( TArguments... ) const, THost> final : std::true_type {};
-
-	// Опознание методов. Проверка свойств метода с волатильным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct IsMemberFunction<TResult (THost::*)( TArguments... ) volatile, THost> final : std::true_type {};
-
-	// Опознание методов. Проверка свойств метода с константным волатильным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct IsMemberFunction<TResult (THost::*)( TArguments... ) const volatile, THost> final : std::true_type {};
-
-
 	// Вывод сигнатуры коллбека для произвольного кандидата.
 	template< auto CANDIDATE >
 	using FunctionType = typename SignatureTypePolicy<decltype( CANDIDATE )>::Signature;

@@ -2,6 +2,7 @@
 
 
 // External dependencies.
+#include <type_traits>
 
 
 // Namespace definition.
@@ -21,6 +22,7 @@ namespace Internal
 
 // Most fundamental internal stuff.
 #include "internal/SignatureTypePolicy.h"
+#include "internal/type-traits.h"
 
 
 // Usable internal stuff.

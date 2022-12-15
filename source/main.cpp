@@ -6,55 +6,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Политика опознания сигнатуры коллбека. Общая форма. Сюда код проваливаться не должен никогда.
-	template< typename >
-	struct SignatureTypePolicy final
-	{
-		// Просто заглушка.
-		using Signature = void ();
-	};
-
-	// Политика опознания сигнатуры глобальной функции.
-	template< typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (*)( TArguments... )> final
-	{
-		// Сигнатура коллбека.
-		using Signature = TResult ( TArguments... );
-	};
-
-	// Политика опознания сигнатуры метода.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... )> final
-	{
-		// Сигнатура коллбека.
-		using Signature = TResult ( TArguments... );
-	};
-
-	// Политика опознания сигнатуры метода с константным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) const> final
-	{
-		// Сигнатура коллбека.
-		using Signature = TResult ( TArguments... );
-	};
-
-	// Политика опознания сигнатуры метода с волатильным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) volatile> final
-	{
-		// Сигнатура коллбека.
-		using Signature = TResult ( TArguments... );
-	};
-
-	// Политика опознания сигнатуры метода с константным волатильным контекстом.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) const volatile> final
-	{
-		// Сигнатура коллбека.
-		using Signature = TResult ( TArguments... );
-	};
-
-
 	// Опознание функциональных объектов. Общая форма, ложное значение.
 	template< typename, typename = void >
 	struct IsCallable final : std::false_type {};

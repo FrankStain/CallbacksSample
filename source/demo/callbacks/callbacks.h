@@ -20,6 +20,7 @@ namespace Internal
 
 
 // Most fundamental internal stuff.
+#include "internal/SignatureTypePolicy.h"
 
 
 // Usable internal stuff.

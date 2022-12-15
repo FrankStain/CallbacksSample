@@ -180,6 +180,7 @@
     <ClCompile Include="..\source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\source\demo\callbacks\Callback.h" />
     <ClInclude Include="..\source\demo\callbacks\callbacks.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\aliases.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\constants.h" />
@@ -189,6 +190,10 @@
     <ClInclude Include="..\source\demo\callbacks\internal\SignatureTypePolicy.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\type-traits.h" />
     <ClInclude Include="..\source\main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\source\demo\callbacks\Callback.inl" />
+    <None Include="..\source\demo\callbacks\factory-functions.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

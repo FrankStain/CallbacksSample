@@ -52,5 +52,16 @@
     <ClInclude Include="..\source\demo\callbacks\internal\constants.h">
       <Filter>Header Files\demo\callbacks\internal</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\Callback.h">
+      <Filter>Header Files\demo\callbacks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\source\demo\callbacks\factory-functions.inl">
+      <Filter>Header Files\demo\callbacks</Filter>
+    </None>
+    <None Include="..\source\demo\callbacks\Callback.inl">
+      <Filter>Header Files\demo\callbacks</Filter>
+    </None>
   </ItemGroup>
 </Project>

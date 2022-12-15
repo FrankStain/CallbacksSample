@@ -23,7 +23,7 @@ namespace Internal
 
 
 // Usable internal stuff.
-
+#include "internal/FunctionProxyBuilder.h"
 
 // Public interface.
 

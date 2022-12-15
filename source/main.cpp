@@ -6,18 +6,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Билдер проксирующей функции для глобальный функций с заданной сигнатурой.
-	template< typename TResult, typename... TArguments >
-	struct FunctionProxyBuilder final
-	{
-		// Проксирующая функция для глобальной функции.
-		template< TResult (*FUNCTION)( TArguments... ) >
-		static inline TResult Proxy( void* const, TArguments... arguments )
-		{
-			return FUNCTION( std::forward<TArguments>( arguments )... );
-		};
-	};
-
 	// Билдер проксирующей функции для методов с заданной сигнатурой и заданным типом хоста.
 	template< typename THost, typename TResult, typename... TArguments >
 	struct MethodProxyBuilder final

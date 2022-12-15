@@ -40,4 +40,5 @@ namespace Internal
 
 
 // Deferred inline definitions.
+#include "factory-functions.inl"
 #include "Callback.inl"

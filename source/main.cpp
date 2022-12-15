@@ -7,15 +7,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Вывод сигнатуры коллбека для произвольного кандидата.
-	template< auto CANDIDATE >
-	using FunctionType = typename SignatureTypePolicy<decltype( CANDIDATE )>::Signature;
-
-	// Вывод сигнатуры коллбека для лямбды.
-	template< typename TLambda >
-	using LambdaFunctionType = typename SignatureTypePolicy<decltype( &TLambda::operator() )>::Signature;
-
-
 	// Является ли переданный кандидат глобальной функцией?
 	template< auto CANDIDATE >
 	inline constexpr bool IS_GLOBAL_FUNCTION = IsGlobalFunction<decltype( CANDIDATE )>::value;

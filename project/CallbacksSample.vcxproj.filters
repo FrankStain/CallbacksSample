@@ -34,5 +34,23 @@
     <ClInclude Include="..\source\demo\callbacks\internal\FunctionProxyBuilder.h">
       <Filter>Header Files\demo\callbacks\internal</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\MethodProxyBuilder.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\EmptyLambdaProxyBuilder.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\SignatureTypePolicy.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\type-traits.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\aliases.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\demo\callbacks\internal\constants.h">
+      <Filter>Header Files\demo\callbacks\internal</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

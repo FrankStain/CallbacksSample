@@ -40,3 +40,4 @@ namespace Internal
 
 
 // Deferred inline definitions.
+#include "Callback.inl"

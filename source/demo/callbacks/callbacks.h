@@ -3,6 +3,8 @@
 
 // External dependencies.
 #include <type_traits>
+#include <utility>
+#include <memory>
 
 
 // Namespace definition.
@@ -34,6 +36,7 @@ namespace Internal
 #include "internal/EmptyLambdaProxyBuilder.h"
 
 // Public interface.
+#include "Callback.h"
 
 
 // Deferred inline definitions.

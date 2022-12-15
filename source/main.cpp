@@ -6,47 +6,6 @@ namespace Demo
 // Приватный стафф.
 namespace Internal
 {
-	// Билдер проксирующей функции для методов с заданной сигнатурой и заданным типом хоста.
-	template< typename THost, typename TResult, typename... TArguments >
-	struct MethodProxyBuilder final
-	{
-		// Проксирующая функция для метода.
-		template< TResult (THost::*METHOD)( TArguments... ) >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
-		{
-			THost* host = reinterpret_cast<THost*>( context );
-
-			return (host->*METHOD)( std::forward<TArguments>( arguments )... );
-		};
-
-		// Проксирующая функция для метода.
-		template< TResult (THost::*METHOD)( TArguments... ) const >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
-		{
-			THost* host = reinterpret_cast<THost*>( context );
-
-			return (host->*METHOD)( std::forward<TArguments>( arguments )... );
-		};
-
-		// Проксирующая функция для метода.
-		template< TResult (THost::*METHOD)( TArguments... ) volatile >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
-		{
-			THost* host = reinterpret_cast<THost*>( context );
-
-			return (host->*METHOD)( std::forward<TArguments>( arguments )... );
-		};
-
-		// Проксирующая функция для метода.
-		template< TResult (THost::*METHOD)( TArguments... ) const volatile >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
-		{
-			THost* host = reinterpret_cast<THost*>( context );
-
-			return (host->*METHOD)( std::forward<TArguments>( arguments )... );
-		};
-	};
-
 	// Билдер проксирующей функции для пустой лямбды с заданной сигнатурой.
 	template< typename TResult, typename... TArguments >
 	struct EmptyLambdaProxyBuilder final

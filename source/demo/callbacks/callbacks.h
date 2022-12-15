@@ -24,6 +24,7 @@ namespace Internal
 
 // Usable internal stuff.
 #include "internal/FunctionProxyBuilder.h"
+#include "internal/MethodProxyBuilder.h"
 
 // Public interface.
 

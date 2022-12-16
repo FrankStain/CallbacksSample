@@ -187,7 +187,7 @@
     <ClInclude Include="..\source\demo\callbacks\internal\FunctionProxyBuilder.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\EmptyLambdaProxyBuilder.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\MethodProxyBuilder.h" />
-    <ClInclude Include="..\source\demo\callbacks\internal\SignatureTypePolicy.h" />
+    <ClInclude Include="..\source\demo\callbacks\internal\SignatureSelector.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\type-traits.h" />
     <ClInclude Include="..\source\main.h" />
   </ItemGroup>

@@ -40,7 +40,7 @@
     <ClInclude Include="..\source\demo\callbacks\internal\EmptyLambdaProxyBuilder.h">
       <Filter>Header Files\demo\callbacks\internal</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\demo\callbacks\internal\SignatureTypePolicy.h">
+    <ClInclude Include="..\source\demo\callbacks\internal\SignatureSelector.h">
       <Filter>Header Files\demo\callbacks\internal</Filter>
     </ClInclude>
     <ClInclude Include="..\source\demo\callbacks\internal\type-traits.h">

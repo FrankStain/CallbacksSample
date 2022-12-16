@@ -14,7 +14,7 @@ namespace Internal
 	inline constexpr bool IS_MEMBER_FUNCTION = IsMemberFunction<decltype( CANDIDATE ), THost>::value;
 
 	template< typename TCandidate >
-	inline constexpr bool IS_FUNCTOR = IsCallable<TCandidate>::value;
+	inline constexpr bool IS_FUNCTOR = IsFunctor<TCandidate>::value;
 }
 }
 }

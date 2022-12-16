@@ -32,7 +32,7 @@ inline namespace Callbacks
 	template< typename THost >
 	inline Callback<TResult ( TArguments... )> Callback<TResult ( TArguments... )>::From( [[maybe_unused]] THost&& host )
 	{
-		static_assert( Internal::IsCallable<THost>::value, "Only callable types allowed." );
+		static_assert( Internal::IS_FUNCTOR<THost>, "Only functor types allowed." );
 		Callback<TResult ( TArguments... )> result{};
 
 		if constexpr( std::is_empty_v<THost> )

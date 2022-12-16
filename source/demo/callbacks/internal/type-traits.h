@@ -7,12 +7,6 @@ inline namespace Callbacks
 {
 namespace Internal
 {
-	template< typename, typename = void >
-	struct IsCallable final : std::false_type {};
-
-	template< typename TCandidate >
-	struct IsCallable<TCandidate, std::void_t<decltype( (void)&TCandidate::operator() )>> final : std::is_class<TCandidate> {};
-
 	template< typename >
 	struct IsGlobalFunction final : std::false_type {};
 
@@ -33,6 +27,12 @@ namespace Internal
 
 	template< typename THost, typename TResult, typename... TArguments >
 	struct IsMemberFunction<TResult (THost::*)( TArguments... ) const volatile, THost> final : std::true_type {};
+
+	template< typename, typename = void >
+	struct IsFunctor final : std::false_type {};
+
+	template< typename TCandidate >
+	struct IsFunctor<TCandidate, std::void_t<decltype( (void)&TCandidate::operator() )>> final : std::is_class<TCandidate> {};
 }
 }
 }

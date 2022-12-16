@@ -33,7 +33,7 @@ namespace Internal
 
 #include "internal/GlobalFunctionContext.h"
 #include "internal/MemberFunctionContext.h"
-#include "internal/EmptyLambdaProxyBuilder.h"
+#include "internal/EmptyLambdaContext.h"
 
 // Public interface.
 #include "Callback.h"

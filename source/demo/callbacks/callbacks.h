@@ -32,7 +32,7 @@ namespace Internal
 #include "internal/constants.h"
 
 #include "internal/GlobalFunctionContext.h"
-#include "internal/MethodProxyBuilder.h"
+#include "internal/MemberFunctionContext.h"
 #include "internal/EmptyLambdaProxyBuilder.h"
 
 // Public interface.

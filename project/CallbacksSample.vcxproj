@@ -184,7 +184,7 @@
     <ClInclude Include="..\source\demo\callbacks\callbacks.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\aliases.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\constants.h" />
-    <ClInclude Include="..\source\demo\callbacks\internal\FunctionProxyBuilder.h" />
+    <ClInclude Include="..\source\demo\callbacks\internal\GlobalFunctionContext.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\EmptyLambdaProxyBuilder.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\MethodProxyBuilder.h" />
     <ClInclude Include="..\source\demo\callbacks\internal\SignatureSelector.h" />

@@ -31,7 +31,7 @@
     <ClInclude Include="..\source\demo\callbacks\callbacks.h">
       <Filter>Header Files\demo\callbacks</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\demo\callbacks\internal\FunctionProxyBuilder.h">
+    <ClInclude Include="..\source\demo\callbacks\internal\GlobalFunctionContext.h">
       <Filter>Header Files\demo\callbacks\internal</Filter>
     </ClInclude>
     <ClInclude Include="..\source\demo\callbacks\internal\MethodProxyBuilder.h">

@@ -22,7 +22,7 @@ inline namespace Callbacks
 	{
 		Callback<TResult ( TArguments... )> result{};
 
-		result.m_routine = &Internal::MethodProxyBuilder<THost, TResult, TArguments...>::template Proxy<FUNCTION>;
+		result.m_routine = &Internal::MemberFunctionContext<THost, TResult, TArguments...>::template ProxyCall<FUNCTION>;
 		result.m_context = std::static_pointer_cast<void>( std::shared_ptr<THost>{ host, []( THost* ) {} } );
 
 		return result;
@@ -41,7 +41,7 @@ inline namespace Callbacks
 		}
 		else
 		{
-			result.m_routine = &Internal::MethodProxyBuilder<THost, TResult, TArguments...>::template Proxy<&THost::operator()>;
+			result.m_routine = &Internal::MemberFunctionContext<THost, TResult, TArguments...>::template ProxyCall<&THost::operator()>;
 			result.m_context = std::static_pointer_cast<void>( std::make_shared<THost>( std::forward<THost>( host ) ) );
 		}
 

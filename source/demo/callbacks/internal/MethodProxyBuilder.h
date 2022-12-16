@@ -8,10 +8,10 @@ inline namespace Callbacks
 namespace Internal
 {
 	template< typename THost, typename TResult, typename... TArguments >
-	struct MethodProxyBuilder final
+	struct MemberFunctionContext final
 	{
 		template< TResult (THost::*METHOD)( TArguments... ) >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
+		static inline TResult ProxyCall( void* const context, TArguments... arguments )
 		{
 			THost* host = reinterpret_cast<THost*>( context );
 
@@ -19,7 +19,7 @@ namespace Internal
 		};
 
 		template< TResult (THost::*METHOD)( TArguments... ) const >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
+		static inline TResult ProxyCall( void* const context, TArguments... arguments )
 		{
 			THost* host = reinterpret_cast<THost*>( context );
 
@@ -27,7 +27,7 @@ namespace Internal
 		};
 
 		template< TResult (THost::*METHOD)( TArguments... ) volatile >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
+		static inline TResult ProxyCall( void* const context, TArguments... arguments )
 		{
 			THost* host = reinterpret_cast<THost*>( context );
 
@@ -35,7 +35,7 @@ namespace Internal
 		};
 
 		template< TResult (THost::*METHOD)( TArguments... ) const volatile >
-		static inline TResult Proxy( void* const context, TArguments... arguments )
+		static inline TResult ProxyCall( void* const context, TArguments... arguments )
 		{
 			THost* host = reinterpret_cast<THost*>( context );
 

@@ -11,7 +11,7 @@ inline namespace Callbacks
 	{
 		Callback<TResult ( TArguments... )> result{};
 
-		result.m_routine = &Internal::FunctionProxyBuilder<TResult, TArguments...>::template Proxy<FUNCTION>;
+		result.m_routine = &Internal::GlobalFunctionContext<TResult, TArguments...>::template ProxyCall<FUNCTION>;
 
 		return result;
 	}

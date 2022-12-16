@@ -31,7 +31,7 @@ namespace Internal
 #include "internal/aliases.h"
 #include "internal/constants.h"
 
-#include "internal/FunctionProxyBuilder.h"
+#include "internal/GlobalFunctionContext.h"
 #include "internal/MethodProxyBuilder.h"
 #include "internal/EmptyLambdaProxyBuilder.h"
 

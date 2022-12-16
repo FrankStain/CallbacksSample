@@ -8,10 +8,10 @@ inline namespace Callbacks
 namespace Internal
 {
 	template< auto CANDIDATE >
-	using FunctionType = typename SignatureSelector<decltype( CANDIDATE )>::Signature;
+	using FunctionSignature = typename SignatureSelector<decltype( CANDIDATE )>::Signature;
 
 	template< typename TLambda >
-	using LambdaFunctionType = typename SignatureSelector<decltype( &TLambda::operator() )>::Signature;
+	using FunctorSignature = typename SignatureSelector<decltype( &TLambda::operator() )>::Signature;
 }
 }
 }

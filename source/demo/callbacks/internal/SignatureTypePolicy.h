@@ -8,37 +8,37 @@ inline namespace Callbacks
 namespace Internal
 {
 	template< typename >
-	struct SignatureTypePolicy final
+	struct SignatureSelector final
 	{
 		using Signature = void ();
 	};
 
 	template< typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (*)( TArguments... )> final
+	struct SignatureSelector<TResult (*)( TArguments... )> final
 	{
 		using Signature = TResult ( TArguments... );
 	};
 
 	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... )> final
+	struct SignatureSelector<TResult (THost::*)( TArguments... )> final
 	{
 		using Signature = TResult ( TArguments... );
 	};
 
 	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) const> final
+	struct SignatureSelector<TResult (THost::*)( TArguments... ) const> final
 	{
 		using Signature = TResult ( TArguments... );
 	};
 
 	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) volatile> final
+	struct SignatureSelector<TResult (THost::*)( TArguments... ) volatile> final
 	{
 		using Signature = TResult ( TArguments... );
 	};
 
 	template< typename THost, typename TResult, typename... TArguments >
-	struct SignatureTypePolicy<TResult (THost::*)( TArguments... ) const volatile> final
+	struct SignatureSelector<TResult (THost::*)( TArguments... ) const volatile> final
 	{
 		using Signature = TResult ( TArguments... );
 	};

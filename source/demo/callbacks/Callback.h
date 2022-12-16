@@ -21,7 +21,7 @@ inline namespace Callbacks
 		static inline Callback From();
 
 		template< auto FUNCTION, typename THost >
-		static inline Callback From( THost* host );
+		static inline Callback From( THost& host );
 
 		template< typename THost >
 		static inline Callback From( THost&& host );

@@ -12,7 +12,7 @@ inline namespace Callbacks
 	}
 
 	template< auto FUNCTION, typename THost >
-	inline auto GetCallback( THost* host ) -> std::enable_if_t<Internal::IS_MEMBER_FUNCTION<FUNCTION, THost>, Callback<Internal::FunctionSignature<FUNCTION>>>
+	inline auto GetCallback( THost& host ) -> std::enable_if_t<Internal::IS_MEMBER_FUNCTION<FUNCTION, THost>, Callback<Internal::FunctionSignature<FUNCTION>>>
 	{
 		return Callback<Internal::FunctionSignature<FUNCTION>>::template From<FUNCTION>( host );
 	}

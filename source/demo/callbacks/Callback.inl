@@ -18,12 +18,12 @@ inline namespace Callbacks
 
 	template< typename TResult, typename... TArguments >
 	template< auto FUNCTION, typename THost >
-	inline Callback<TResult ( TArguments... )> Callback<TResult ( TArguments... )>::From( THost* host )
+	inline Callback<TResult ( TArguments... )> Callback<TResult ( TArguments... )>::From( THost& host )
 	{
 		Callback<TResult ( TArguments... )> result{};
 
 		result.m_routine = &Internal::MemberFunctionContext<THost, TResult, TArguments...>::template ProxyCall<FUNCTION>;
-		result.m_context = std::static_pointer_cast<void>( std::shared_ptr<THost>{ host, []( THost* ) {} } );
+		result.m_context = std::static_pointer_cast<void>( std::shared_ptr<THost>{ &host, []( THost* ) {} } );
 
 		return result;
 	}

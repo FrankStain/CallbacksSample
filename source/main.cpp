@@ -27,7 +27,7 @@ int main()
 
 	Demo::Callback<void ()> cb;
 	Demo::Callback<void ()> on_function{ Demo::GetCallback<&PrintMe>() };
-	Demo::Callback<void ()> on_method{ Demo::GetCallback<&UseMe::PrintMe>( &value ) };
+	Demo::Callback<void ()> on_method{ Demo::GetCallback<&UseMe::PrintMe>( value ) };
 	Demo::Callback<void ()> on_trivial_lambda{ Demo::GetCallback( []() { std::cout << "From lambda!" << std::endl; } ) };
 	Demo::Callback<void ()> on_closure_lambda{ Demo::GetCallback( [&value]() { std::cout << "From lambda! "; value.PrintMe(); } ) };
 

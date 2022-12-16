@@ -37,7 +37,7 @@ inline namespace Callbacks
 
 		if constexpr( std::is_empty_v<THost> )
 		{
-			result.m_routine = &Internal::EmptyLambdaProxyBuilder<TResult, TArguments...>::template Proxy<THost>;
+			result.m_routine = &Internal::EmptyLambdaContext<TResult, TArguments...>::template ProxyCall<THost>;
 		}
 		else
 		{

@@ -23,9 +23,9 @@ namespace Internal
 			@brief	Adapter-function for given pointer to global function.
 
 			Template adapts the given function to required interface of callback routine.
-			Actual function is remembered sue to instantiation. First argument does not used here due to specific of global functions.
+			Actual function is remembered due to instantiation. First argument does not used here due to specific of global functions.
 
-			@tparam	FUNCTION	Pointer to actual global function being called no adapter call.
+			@tparam	FUNCTION	Pointer to actual global function being called on adapter call.
 		*/
 		template< TResult (*FUNCTION)( TArguments... ) >
 		static inline TResult AdaptedCall( void* const, TArguments... arguments )

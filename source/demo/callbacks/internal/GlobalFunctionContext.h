@@ -11,7 +11,7 @@ namespace Internal
 		@brief	Callback execution context for global functions.
 
 		Context is used by callback instances to produce the proxy function for certain global function.
-		`ProxyCall` inner template provides the valid proxy with common interface for any given global function.
+		`AdaptedCall` inner template provides the valid proxy with common interface for any given global function.
 
 		@tparam	TResult		Result of function.
 		@tparam	TArguments	List of function parameters.

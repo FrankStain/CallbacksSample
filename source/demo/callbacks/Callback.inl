@@ -35,6 +35,7 @@ inline namespace Callbacks
 		static_assert( Internal::IS_FUNCTOR<THost>, "Only functor types allowed." );
 		Callback<TResult ( TArguments... )> result{};
 
+		// Stateless lambdas should be stored differently.
 		if constexpr( std::is_empty_v<THost> )
 		{
 			result.m_routine = &Internal::EmptyLambdaContext<TResult, TArguments...>::template AdaptedCall<THost>;
@@ -53,6 +54,7 @@ inline namespace Callbacks
 	{
 		if( IsEmpty() )
 		{
+			// Use value initialization of result.
 			return TResult();
 		}
 
